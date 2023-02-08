@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+
+<body>
+    <div id="wrapper"></div>
+
+    <script>
+        // const person = {
+        //     name: 'Rishabh',
+        //     age: 20,
+        //     hello: function(){
+        //         return ("Hello " + this.name)
+        //     }
+        // }
+
+        // document.write(person.hello())
+
+
+        // const person = {
+        //     name: 'Rishabh',
+        //     age: 24,
+        //     hometown: 'Jaipur',
+        //     status: 'single'
+        // }
+
+        // const entries = Object.keys(person);
+        // for (let i = entries.length - 1; i >= 0; i--){
+        //     document.write( entries[i] + " = " + person[entries[i]] + "<br>")
+        // }
+
+
+        //Shallow Copy: where memory is shared by all copies. Any change in any copy, will be reflected in all copies.
+        //Deep Copy: where memory is not shared by all copies. Any change in any copy, will not be reflected in all copies.
+
+        // let obj1 = {
+        //     name: 'Ramraj',
+        //     age: 25
+        // }
+
+        // let obj2 = obj1; //Shallow copy
+
+        // obj2.name = 'Sachin';
+        // obj2.age = 30
+
+        // console.log(obj1.age); //30
+
+
+        // let obj2 = Object.create(obj1) //Shallow
+
+
+        // let obj2 = {...obj1} //Deep Copy
+
+        // obj2.name = "Sanjay"
+
+        // console.log(obj1.name) //Ramraj
+
+
+
+
+        // let person = {
+        //     name: 'Pulkit',
+        //     company: 'Metacube',
+        //     address: {
+        //         city: 'Jaipur',
+        //         state: 'Rajasthan'
+        //     }
+        // }
+
+        // let person2 = { ...person }
+
+        // person2.name = 'Ramraj'
+        // person2.address.city = 'Jodhpur'
+
+        // console.log(person.name)
+
+        // console.log(person.address.city)
+
+
+
+        let person = {
+            name: 'Pulkit',
+            company: 'Metacube',
+            address: {
+                city: 'Jaipur',
+                state: 'Rajasthan'
+            }
+        }
+
+
+        // {
+        //     name: 'Pulkit',
+        //     company: 'Metacube',
+        //     address_city: 'Jaipur',
+        //     address_state: 'Rajasthan'
+        // }
+
+
+            for(let x in person){
+                if(typeof person[x] === "object" )
+                {
+                    for(let j in person[x])
+                    {
+                        document.write(x + "_"+j+":" + person[x][j] + "<br>")
+                    }                    
+                    
+                }
+
+                else{
+                    document.write(x+": "+person[x]+"<br>")
+                }
+            }
+
+
+
+
+    </script>
+</body>
+
+</html>
